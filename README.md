@@ -29,10 +29,10 @@ A space to learn and practice FullStack Web Development — from notes to small 
 - `crypto-token/` – making your own token (just for fun)
 - `nft-minting/` – like OpenSea but you
 
-## Goal
+## 🍉 Goal
 Learn full-stack without crying, build cool apps, and finally understand how the whole web works—from browser to backend and beyond.
 
-##  Started this to:
+## 🦾 Started this to:
 - Keep all my full stack dev stuff in one place
 - Track progress as I learn
 - Practice practice & practice
