@@ -1,0 +1,92 @@
+CSS: Cascading Style sheets
+
+* How to add CSS?
+1. Inline CSS
+        1. Use style inside tag.
+        2. Not considered best practice.
+
+2. Internal CSS
+        1. use style tag in head tag. 
+        2. Syntax
+            <style>
+            Selector 
+            {
+                property : value
+            }
+            </style>
+        
+        3. What if inline and internal both defines some properties?
+        - Inline will win, but if you want internal to win just write !important;
+
+3. External CSS:
+        1. link css file in head.
+        2. Do following in css file:
+        Selector 
+            {
+                property : value
+            }
+            </style>
+
+        3. What if inline, external  and internal all defines some properties?
+         - Inline will win, well it is nothing but ordering.
+
+        4. Maintains seperation of concern.
+
+    
+* Selector
+1. You choose html tags and style them.
+2. Types of selectors?
+    1. Element 
+        p
+        {
+            style here
+        }
+
+    2. Class
+        .classname
+        {
+
+        }
+
+    3. id
+        -is unique
+        #idname
+        {
+            style here
+        }
+
+    4. Group
+        p, article
+        {
+            will apply to evrything u mentioned
+        }
+
+        or p.paraclass
+        {
+            will only style paragraph's para class
+        }
+
+* Fonts & Colours
+1. use font - : and u will see alot of properties like size,family etc.
+            1. style: italic, bold, underline etc.
+            2. size: in terms of pixel (1 physical pixel = 1/96 of an inch)
+            3. family: you can apply times new roman etc
+            4. weight: changes darkness/thickness of font
+
+2. line-height: defines gap b/w 2 lines
+3. fall back: use more than 1 font incase the first one does not applies.
+4. import external fonts from google fonts.
+            - copy link tag (will automaticzlly generate there.)
+
+5. Colours: can use name, rgb, lsh or hexa considered
+            - color: brown
+            - color: rgba(20,1,192,0/1) -a decides transperancy level of Colours
+            - color: you can pick any hex colour from color picker and paste (Eg, FFFFFF = WHITE where FF:R, FF:G, FF:B, FF:A)
+            - color: hsl(20, 20%, 60%) you can pick any HCL color
+
+* CSS BoxModel:
+1. Border: border - style/width/color etc
+                1. style: dotted or solid etc
+2. Shortcut? border: style width color radis(roundness of border) 
+3. <Span> tag is an inline element and as inline elements are occupied the with there sufficiency.Thats why this element not taking the width and height.
+
