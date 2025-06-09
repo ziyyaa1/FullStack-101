@@ -66,6 +66,9 @@ CSS: Cascading Style sheets
             will only style paragraph's para class
         }
 
+    5. universal
+            *{} - for everything
+
 * Fonts & Colours
 1. use font - : and u will see alot of properties like size,family etc.
             1. style: italic, bold, underline etc.
@@ -84,9 +87,36 @@ CSS: Cascading Style sheets
             - color: you can pick any hex colour from color picker and paste (Eg, FFFFFF = WHITE where FF:R, FF:G, FF:B, FF:A)
             - color: hsl(20, 20%, 60%) you can pick any HCL color
 
+
 * CSS BoxModel:
 1. Border: border - style/width/color etc
                 1. style: dotted or solid etc
 2. Shortcut? border: style width color radis(roundness of border) 
 3. <Span> tag is an inline element and as inline elements are occupied the with there sufficiency.Thats why this element not taking the width and height.
+4. you can define width and height of your elements too.
 
+5. BOX MODEL? verything is rendered on our website in box.
+
++-----------------------------+   ← Margin: 
+|                             |           1. increases gap bw 2 diff boxes by margin:60px or similar to padding syntax
+|                             |
+|   +---------------------+   ← Border  
+|   |                     |   |
+|   |   +-------------+   |   |  
+|   |   |             |  ← Padding: 
+|                             |     1. you can increase padding like padding: 90px to have space b/w your content and border.  
+|   |   |   Content   |   |   |     2. padding-left / padding-right / padding-top / padding - bottom   or padding: 20px 30px 20px 70px (top, right, left, bottom - acw) or padding: 20px 40px (topbottom and leftright)
+|   |   |             |   |   |
+|   |   +-------------+   |   |
+|   |                     |   |
+|   +---------------------+   |
+|                             |
++-----------------------------+
+
+6. Best practise? set padding and margin to 0 in universal selector.
+
+
+* Css display property:
+1. how to display different tags in different different ways.
+2. Block element: Everything in new line, default width: extreme left to right but u can also give custom width, height and box stuff (padding margin)
+3. Box-sizing: block element
