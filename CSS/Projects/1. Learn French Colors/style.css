@@ -1,0 +1,32 @@
+.color-title
+{
+    font-size: x-large;
+    font-weight: normal;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+img
+{
+    height: 200px;
+    width: 200px;
+}
+
+#red {
+    color: red;
+  }
+  
+  #blue {
+    color: blue;
+  }
+  
+  #orange {
+    color: orange;
+  }
+  
+  #green {
+    color: green;
+  }
+  
+  #yellow {
+    color: yellow;
+  }
