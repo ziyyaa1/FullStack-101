@@ -1,0 +1,136 @@
+CSS FLEXBOX SUMMARY
+
+1. What is Flexbox?
+- Flexbox (Flexible Box) is a 1-dimensional layout model for arranging items inside a container.
+- To use flexbox, set the container's CSS: `display: flex;`
+- All direct children of the flex container become flex items.
+
+Example:
+-------------------------------------------------
+| [ item 1 ] [ item 2 ] [ item 3 ] [ item 4 ]    |
+-------------------------------------------------
+By default, items are arranged horizontally (flex-direction: row).
+
+
+2. Flex Container Properties
+
+Property        | Values                           | Description & Example
+----------------|---------------------------------|-----------------------------------------
+flex-direction  | row (default), row-reverse,     | Sets main axis direction.
+                | column, column-reverse           | 
+Example: `flex-direction: row;` → items align horizontally left to right.
+
+flex-wrap       | nowrap (default), wrap,          | Controls whether items wrap to new lines.
+                | wrap-reverse                    | Example: `flex-wrap: wrap;`
+
+flex-flow       | shorthand for flex-direction +  | Example: `flex-flow: row wrap;`
+                | flex-wrap                       |
+
+justify-content | flex-start, flex-end, center,   | Aligns items along the main axis.
+                | space-between, space-around,    |
+                | space-evenly                   |
+
+align-items     | flex-start, flex-end, center,   | Aligns items along the cross axis (single line).
+                | baseline, stretch               |
+
+align-content   | flex-start, flex-end, center,   | Aligns multiple lines (when wrapping). Removes space bw items when wrapping
+                | space-between, space-around,    |
+                | stretch                        |
+
+
+3. Main Axis & Cross Axis
+-------------------------
+- `flex-direction: row` (default)
+  - Main axis → horizontal (left → right)
+  - Cross axis → vertical (top → bottom)
+
+- `flex-direction: column`
+  - Main axis → vertical (top → bottom)
+  - Cross axis → horizontal (left → right)
+
+---
+
+4. Flex Items Properties
+
+Property       | Values / Example                 | Description
+---------------|---------------------------------|--------------------------------------------
+order          | 0 (default), 1, -1, etc.         | Controls visual order of items (not HTML order).
+flex-grow      | number (e.g., 1, 2)              | How much item grows relative to others.
+flex-shrink    | number (e.g., 1, 4)              | How much item shrinks relative to others.
+flex-basis     | length, %, auto                  | Initial size of item before grow/shrink.
+align-self     | auto (default), flex-start,      | Override align-items for a single item.
+               | flex-end, center, baseline, stretch |
+
+
+
+5. Alignment Properties Explained with Examples
+
+- justify-content (align items along the main axis):
+
+  a. flex-start: Items align at the start of the container.
+  |[item1][item2][item3]             |
+
+  b. flex-end: Items align at the end of the container.
+  |             [item1][item2][item3]|
+
+  c. center: Items align in the center of the container.
+  |        [item1][item2][item3]     |
+
+  d. space-between: Items spread out evenly; first item at start, last at end.
+  |[item1]     [item2]     [item3]   |
+
+  e. space-around: Items have equal space around them.
+  |   [item1]   [item2]   [item3]    |
+
+  h. space-evenly: Equal space between all items and edges.
+  |    [item1]    [item2]    [item3] |
+
+- align-items (align items on cross axis in a single line):
+
+  a.flex-start: Align items to start of cross axis (top if row).
+  b.flex-end: Align items to end of cross axis (bottom if row).
+  c.center: Center items along cross axis.
+  d.baseline: Align items by text baseline.
+  e.stretch (default): Stretch items to fill cross axis.
+
+- align-content (align multiple lines on cross axis when wrapping):
+
+  a.Works like justify-content but for multiple lines.
+
+- align-self:
+
+  a.Overrides align-items for individual flex items.
+
+
+6. Quick Notes:
+
+- `order` changes visual order but not the HTML source order.
+- `flex-grow` and `flex-shrink` control how much items grow or shrink relative to each other.
+- `align-self` overrides the container’s `align-items` property for individual items.
+- `align-content` only works if there are multiple lines of items (i.e., if wrapping occurs).
+
+---
+
+Example CSS:
+
+.container {
+display: flex;
+flex-direction: row;        /* Main axis horizontal */
+flex-wrap: wrap;            /* Allow items to wrap to new lines */
+justify-content: space-between; /* Spread items evenly */
+align-items: center;        /* Vertically center items */
+height: 200px;
+}
+
+.item {
+flex-grow: 1;               /* Items grow equally */
+flex-shrink: 1;             /* Items shrink equally */
+flex-basis: 100px;          /* Base size before grow/shrink */
+order: 0;                   /* Default order */
+}
+
+.item-special {
+order: -1;                  /* Moves this item to the start */
+align-self: flex-start;     /* Override alignment for this item */
+}
+

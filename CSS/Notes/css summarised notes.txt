@@ -1,0 +1,240 @@
+CSS: Cascading Style sheets
+
+* How to add CSS?
+1. Inline CSS
+        1. Use style inside tag.
+        2. Not considered best practice.
+        3. Syntax: 
+            <h1 style="text-align: center;"> Learn the colors in French!</h1>
+
+
+2. Internal CSS
+        1. use style tag in head tag. 
+        2. Syntax
+            <style>
+            Selector 
+            {
+                property : value
+            }
+            </style>
+        
+        3. What if inline and internal both defines some properties?
+        - Inline will win, but if you want internal to win just write !important;
+
+3. External CSS:
+        1. link css file in head.
+        2. Do following in css file:
+        Selector 
+            {
+                property : value
+            }
+            </style>
+
+        3. What if inline, external  and internal all defines some properties?
+         - Inline will win, well it is nothing but ordering.
+
+        4. Maintains seperation of concern.
+
+ *** Div tag is v imp in everything you do.
+
+
+* Selector
+1. You choose html tags and style them.
+2. Types of selectors?
+    1. Element 
+        Used to style all elements of a specific type.
+        Example:
+        p {
+        color: blue;
+        }
+
+        Will style all <p> tags with blue text.
+
+    2. Class
+        Targets elements with a specific class.
+        Example:
+        .note {
+        font-size: 16px;
+        }
+
+        HTML:
+        <p class="note">This is a note</p>
+
+    3. id
+        Targets a unique element using its ID.
+        Example:
+        #main-title {
+        text-align: center;
+        }
+
+        HTML:
+        <h1 id="main-title">Hello</h1>
+
+    4. Group
+        Applies the same style to multiple element types.
+        Example:
+        h1, h2, p {
+        font-family: Arial;
+        }
+                or p.paraclass
+                {
+                    will only style paragraph's para class
+                }
+
+    5. universal
+            Applies styles to all elements on the page.
+            Example:
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+    6. Specific Element with Class:
+            Targets a specific element with a class.
+            Example:
+            p.warning {
+            color: red;
+            }
+
+            HTML:
+            <p class="warning">Be careful!</p>
+
+3. COMBINATORS & RELATIONSHIPS:
+        1. Descendant Selector (space):
+                a. Selects elements inside another element.
+                    Example:
+                    div p {
+                    color: green;
+                    }
+
+                b. All <p> elements inside any <div> will be green.
+
+        2. Child Selector (>):
+                a. Selects only direct children.
+                Example:
+                ul > li {
+                list-style: none;
+                }
+
+                b. Only the <li> directly inside <ul> will be affected.
+
+
+        3. Combined (Chained) Selectors:
+                a. Used to target elements of a specific type with a class.
+                Example:
+                li.active {
+                background-color: yellow;
+                }
+
+                b. Only <li> elements with class "active" will be yellow.
+
+SUMMARY:
+
+Selector Type    | Syntax Example       | What it Selects
+-----------------|----------------------|-----------------------------
+Element          | p {}                 | All <p> elements
+Class            | .note {}             | Elements with class="note"
+ID               | #main {}             | Element with id="main"
+Group            | h1, h2, p {}         | All h1, h2, and p
+Universal        | * {}                 | All elements
+Descendant       | div p {}             | <p> inside <div>
+Child            | ul > li {}           | Direct <li> in <ul>
+Combined         | li.active {}         | <li> with class="active"
+
+
+* Fonts & Colours
+1. use font - : and u will see alot of properties like size,family etc.
+            1. style: italic, bold, underline etc.
+            2. size: in terms of pixel (1 physical pixel = 1/96 of an inch)
+            3. family: you can apply times new roman etc
+            4. weight: changes darkness/thickness of font
+
+2. line-height: defines gap b/w 2 lines
+3. fall back: use more than 1 font incase the first one does not applies.
+4. import external fonts from google fonts.
+            - copy link tag (will automaticzlly generate there.)
+
+5. Colours: can use name, rgb, lsh or hexa considered
+            - color: brown
+            - color: rgba(20,1,192,0/1) -a decides transperancy level of Colours
+            - color: you can pick any hex colour from color picker and paste (Eg, FFFFFF = WHITE where FF:R, FF:G, FF:B, FF:A)
+            - color: hsl(20, 20%, 60%) you can pick any HCL color
+
+
+* CSS BoxModel:
+1. Border: border - style/width/color etc
+                1. style: dotted or solid etc
+2. Shortcut? border: style width color radis(roundness of border) 
+3. <Span> tag is an inline element and as inline elements are occupied the with there sufficiency.Thats why this element not taking the width and height.
+4. you can define width and height of your elements too.
+
+5. BOX MODEL? verything is rendered on our website in box.
+
++-----------------------------+   ← Margin: 
+|                             |           1. increases gap bw 2 diff boxes by margin:60px or similar to padding syntax
+|                             |
+|   +---------------------+   ← Border  
+|   |                     |   |
+|   |   +-------------+   |   |  
+|   |   |             |  ← Padding: 
+|                             |     1. you can increase padding like padding: 90px to have space b/w your content and border.  
+|   |   |   Content   |   |   |     2. padding-left / padding-right / padding-top / padding - bottom   or padding: 20px 30px 20px 70px (top, right, left, bottom - acw) or padding: 20px 40px (topbottom and leftright)
+|   |   |             |   |   |
+|   |   +-------------+   |   |
+|   |                     |   |
+|   +---------------------+   |
+|                             |
++-----------------------------+
+
+6. Best practise? set padding and margin to 0 in universal selector.
+7. Box-sizing: block element - your box retains actual size
+
+
+* Css display property:
+1. how to display different tags in different different ways.
+2. Block element: Everything in new line, default width: extreme left to right but u can also give custom width, height and box stuff (padding margin)
+3. Inline elements: They always try to be in the same line, default width: same as content, cannot apply custom width, height and box stuff (padding margin)
+4. You can explicity change box element to inline element and vice versa by display: box in inline elment's selector
+4b. Combination of both by display: inline-block (will have all inine stuff but wih custom properties)
+
+
+* Css position properties:
+1. tells how to position elements on webpage
+2. Types of posiotionng:
+            1. Relative: 
+                a. You can move your elements relative to window by 
+                         position: Relative
+                         top: 10px (There are 4 properties, top left bottom and right)
+                b. Gap is maintained.
+
+            2. Absolute
+                a. relative to its closest positioned ancestor tag or then to top left of webpage.
+                b. Gap is not maintained.
+            
+            3. Fixed
+                a. image stays at its fixed place even if you scroll up down.
+                  
+            4. Sticky:
+                a. same as fixed but relative to its closest positioned ancestor tag.
+                b. only shows fixed property in its parent element, when the parent element is removed from webpage, it is removed too. 
+
+
+* Css size units:
+1. vh/w: viewport height/width
+2. Types of units:
+        1. Absolute: fixed unit.
+        2. Relative: relative to window - should be use for responsive design.
+3. can be vh, vw, px,  % relative to parent tag, em, rm.
+4. em: relative to parent, eg: 10 em so it will be 10*parent's size
+5. rem: relative to root tag, eg html tag.
+        if 10rem and root element is 16 (by default) then 160px.
+
+
+* Float
+1. floats image to right/left and wraps text around it.
+2. clear: left = remove element in left.
+3. float: left = images will be rendered in left
+4. overflow: when content exceeds box, you can fix it by
+             overflow: scroll (will see content in box by scrolling)
+             overflow: auto (box will take size of content)
